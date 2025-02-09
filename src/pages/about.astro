@@ -1,31 +1,11 @@
 ---
-import '../styles/global.css';
-const pageTitle = "About Me";
-const descriptionColor = "navy";
+import Layout from "../layouts/Layout.astro"
+const page_title = "About Me";
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-    <style define:vars={{descriptionColor}}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .description {
-        color: var(--descriptionColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/software-mental-models/">Software Mental Models</a>
-    <h1>{pageTitle}</h1>
-    <p class="description">Under Construction, check back soon!</p>
-
-  </body>
-</html>
+<Layout pageTitle={page_title}>
+  <p>Here is some info about the author of this site, Justin Hill:</p>
+  <h2>Professional</h2>
+  <p>Todo</p>
+  <h2>Personal</h2>
+  <p>Todo</p>
+</Layout>
