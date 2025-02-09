@@ -1,13 +1,15 @@
 ---
 import Layout from '../layouts/base_layout.astro';
-const page_title = 'Mental Models in Software Development'
+
+const all_notes = Object.values(import.meta.glob('./software-mental-models/*.md', { eager: true}));
+const page_title = 'Mental Models in Software Development';
 ---
 
 <Layout pageTitle={page_title}>
   <p>Over the course of my career, I've found the following mental models to be useful when describing different approaches to software engineering.</p>
 
   <ul>
-    <li><a href="/software-mental-models/data-calculation-action/">Data, Calculations, and Actions</a></li>
+    {all_notes.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>
 
   <p>More coming soon...</p>
