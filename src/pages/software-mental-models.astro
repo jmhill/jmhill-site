@@ -8,6 +8,8 @@ const page_title = 'Mental Models in Software Development';
 <Layout pageTitle={page_title}>
   <p>Over the course of my career, I've found the following mental models to be useful when describing different approaches to software engineering.</p>
 
+  <p>View notes by <a href="/tags/">tag</a> to explore by topic.</p>
+
   <ul>
     {all_notes.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>

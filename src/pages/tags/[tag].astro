@@ -19,6 +19,7 @@ const { tag } = Astro.params;
 const { notes } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
+  <p><a href="/tags/">{'<< Go Back to Tag List'}</a></p>
   <p>Notes tagged with {tag}</p>
   <ul>
     {notes.map(note => <li><a href={note.url}>{note.frontmatter.title}</a></li>)}

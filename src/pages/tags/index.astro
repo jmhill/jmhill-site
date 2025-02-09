@@ -4,5 +4,24 @@ const all_notes = Object.values(import.meta.glob('../software-mental-models/*.md
 const tags = [...new Set(all_notes.map((post: any) => post.frontmatter.tags).flat())];
 ---
 <BaseLayout pageTitle="Notes Indexed By Tag">
-  <div>{tags.map(tag => <p><a href={`/tags/${tag}`}>{tag}</a></p>)}
+  <div class="tags">{tags.map(tag => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
 </BaseLayout>
+<style>
+  a {
+    color: #00539F;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+</style>
