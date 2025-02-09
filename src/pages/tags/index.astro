@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/base_layout.astro';
+const all_notes = Object.values(import.meta.glob('../software-mental-models/*.md', { eager: true }));
+const tags = [...new Set(all_notes.map((post: any) => post.frontmatter.tags).flat())];
 ---
-<BaseLayout pageTitle="All Tags">
-  <p>Hello</p>
+<BaseLayout pageTitle="Notes Indexed By Tag">
+  <div>{tags.map(tag => <p><a href={`/tags/${tag}`}>{tag}</a></p>)}
 </BaseLayout>
