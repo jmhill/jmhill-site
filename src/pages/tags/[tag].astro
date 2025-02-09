@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/base_layout.astro';
+
+export async function getStaticPaths() {
+  const all_notes = Object.values(import.meta.glob('../software-mental-models/*.md', { eager: true }));
+
+  const unique_tags = [...new Set(all_notes.map(post => post.frontmatter.tags).flat())];
+
+  return unique_tags.map(tag => {
+    const filtered = all_notes.filter(note => note.frontmatter.tags.includes(tag));
+    return {
+      params: { tag },
+      props: { notes: filtered }
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { notes } = Astro.props;
+---
+<BaseLayout pageTitle={tag}>
+  <p>Notes tagged with {tag}</p>
+  <ul>
+    {notes.map(note => <li><a href={note.url}>{note.frontmatter.title}</a></li>)}
+  </ul>
+</BaseLayout>
