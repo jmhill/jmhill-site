@@ -1,12 +1,23 @@
 ---
-const { url, platform_name } = Astro.props
+import { Icon } from 'astro-icon/components';
+const { url, platform_name, icon } = Astro.props
 ---
-<a href={url}>{platform_name}</a>
+<div class="link">
+  <a href={url}>{ icon && <Icon name={icon} /> }{platform_name}</a>
+</div>
 <style>
   a {
-    padding: 0.5rem 1rem;
     color: white;
-    background-color: #4c1d95;
     text-decoration: none;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
   }
+
+  .link {
+    padding: 0.5rem 1rem;
+    background-color: #4c1d95;
+    border-radius: 10px;
+  }
+
 </style>
