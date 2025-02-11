@@ -4,12 +4,23 @@ import Layout from '../../layouts/base_layout.astro';
 const all_notes = Object.values(import.meta.glob('./*.md', { eager: true}));
 const page_title = 'Mental Models in Software Development';
 ---
-
 <Layout pageTitle={page_title}>
+  <p>I was originally introduced to the idea of mental models by the folks over at <a href="https://fs.blog/mental-models">Farnam Street</a>, who have been writing for some time about the subject. Inspired by Charlie Munger's multidisciplanary pursuit of knowledge and his insights on business and life, Shane Parrish and the Farnam Street team developed a large encyclopedia of mental models available online and in book form.</p>
+  <p>What is a <em>mental model</em>? As described in the link above:</p>
+  <blockquote cite="https://fs.blog/mental-models/">
+    <p>A mental model is a simplified explanation of how something works.</p>
+    <p>Any idea, belief, or concept can be boiled down to its essence. Like a map, mental models highlight key information while ignoring irrelevant details. They're tools for compressing complexity into manageable chunks.</p>
+  </blockquote>
+  <p>I like to think of mental models as simplified, specialized lenses through which we can make sense of the world - they don't show us everything at once; rather, they allow us to focus in on one aspect of the world at a time so we can derive insight.</p>
+  <p>In writing these notes, another source of inspiration I will borrow from is the book <a href="https://www.jamesshore.com/v2/books/aoad2">Art of Agile Development</a> by James Shore. This book is a sort of 'opinionated encyclopedia' of agile software development approaches. For those who are unfamiliar, agile software development is not a single framework or even a singular set of practices, but rather a loosely aligned group of approaches that has coalesced over the past 20+ years thanks to the insights and experimentation of many different pracititioners. One of the things I love about Art of Agile is that Shore will often start a chapter by listing out direct references to the sources he has pulled from to describe his ideal sets of practices.</p>
+  <p>I will try to follow his example and develop a source list at the beginning of every note, tying each mental model to its various sources</p>
   <p>Over the course of my career, I've found the following mental models to be useful when describing different approaches to software engineering.</p>
 
+  <h3>By Tag</h3>
   <p>View notes by <a href="/tags/">tag</a> to explore by topic.</p>
 
+  <h3>Full List</h3>
+  <p>Or, see the full list here:</p>
   <ul>
     {all_notes.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
   </ul>
