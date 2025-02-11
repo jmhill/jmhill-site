@@ -12,10 +12,4 @@ tags: ["functional-programming", "application-architecture"]
 
 Credit to Eric Normand and his book, "Grokking Simplicity"
 
-## Hierarchy
-
-TODO
-
-## Relationship with Onion Architecture
-
-TODO
+Under construction, come back later!
