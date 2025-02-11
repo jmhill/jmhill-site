@@ -1,7 +1,7 @@
 ---
-import Layout from '../layouts/base_layout.astro';
+import Layout from '../../layouts/base_layout.astro';
 
-const all_notes = Object.values(import.meta.glob('./software-mental-models/*.md', { eager: true}));
+const all_notes = Object.values(import.meta.glob('./*.md', { eager: true}));
 const page_title = 'Mental Models in Software Development';
 ---
 
