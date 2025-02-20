@@ -7,7 +7,7 @@ author: 'Justin Hill'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["functional-programming", "application-architecture"]
+tags: ["functional programming", "application architecture"]
 ---
 
 Credit to Eric Normand and his book, "Grokking Simplicity"
